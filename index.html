@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Service</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <nav class="flex justify-between items-center bg-white shadow-md px-6 py-3">
+    <div class="flex items-center gap-2">
+      <img src="assets/logo.png" alt="Logo" class="h-8 w-8">
+      <span class="text-lg font-semibold text-gray-800">Emergency Service</span>
+    </div>
+
+    <div class="flex items-center gap-4">
+      
+      <button id="heartBtn" class="hover:scale-110 transition">
+        <img src="assets/heart.png" alt="Heart" class="h-6 w-6">
+      </button>
+
+      <div class="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full font-medium">
+        <img src="assets/coin.png" alt="Coin" class="h-5 w-5">
+        <span id="coinCount">100</span>
+      </div>
+
+      <div class="flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">
+        <span id="copyCount">0</span>
+      </div>
+
+    </div>
+  </nav>
+
+  <script>
+    
+    let coins = 100;
+    document.getElementById("coinCount").textContent = coins;
+
+
+    let copyCount = 0;
+    const copyEl = document.getElementById("copyCount");
+
+    
+    document.getElementById("heartBtn").addEventListener("click", () => {
+      copyCount++;
+      copyEl.textContent = copyCount;
+    });
+  </script>
+
+</body>
+</html>
