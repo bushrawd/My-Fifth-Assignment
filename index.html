@@ -8,23 +8,31 @@
 </head>
 <body class="bg-gray-100">
 
+  <!-- Navbar -->
   <nav class="flex justify-between items-center bg-white shadow-md px-6 py-3">
+    
+    <!-- Left: Logo + Website Name -->
     <div class="flex items-center gap-2">
+      <!-- Replace with your own logo -->
       <img src="assets/logo.png" alt="Logo" class="h-8 w-8">
       <span class="text-lg font-semibold text-gray-800">Emergency Service</span>
     </div>
 
+    <!-- Right: Heart, Coin Count, Copy Count -->
     <div class="flex items-center gap-4">
       
+      <!-- Heart Icon -->
       <button id="heartBtn" class="hover:scale-110 transition">
         <img src="assets/heart.png" alt="Heart" class="h-6 w-6">
       </button>
 
+      <!-- Coin Count -->
       <div class="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full font-medium">
         <img src="assets/coin.png" alt="Coin" class="h-5 w-5">
         <span id="coinCount">100</span>
       </div>
 
+      <!-- Copy Count -->
       <div class="flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">
         <span id="copyCount">0</span>
       </div>
@@ -32,16 +40,43 @@
     </div>
   </nav>
 
-  <script>
+
+  <!-- Hero Section -->
+  <section class="h-screen bg-gradient-to-b from-green-700 via-green-500 to-green-300 flex flex-col items-center justify-between text-white px-4 py-10">
     
+    <!-- Top: Logo -->
+    <div class="mt-6">
+      <!-- Replace with your hero logo -->
+      <img src="assets/logo.png" alt="Hero Logo" class="h-24 w-24 mx-auto">
+    </div>
+
+    <!-- Center: Title -->
+    <div class="flex-grow flex items-center justify-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-center drop-shadow-lg">
+        Emergency Service Directory
+      </h1>
+    </div>
+
+    <!-- Bottom: Slogan -->
+    <div class="mb-10 text-center">
+      <p class="text-lg md:text-xl font-medium italic">
+        Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh
+      </p>
+    </div>
+
+  </section>
+
+
+  <script>
+    // Default Coin Count
     let coins = 100;
     document.getElementById("coinCount").textContent = coins;
 
-
+    // Copy Count
     let copyCount = 0;
     const copyEl = document.getElementById("copyCount");
 
-    
+    // Example: increase copy count when clicking the heart
     document.getElementById("heartBtn").addEventListener("click", () => {
       copyCount++;
       copyEl.textContent = copyCount;
