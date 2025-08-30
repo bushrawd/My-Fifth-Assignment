@@ -3,83 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emergency Service</title>
+  <title>Emergency Service Directory</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 text-gray-800">
 
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center bg-white shadow-md px-6 py-3">
+  <!-- ================= NAVBAR ================= -->
+  <nav class="flex justify-between items-center bg-white shadow-md px-6 py-3 sticky top-0 z-50">
     
     <!-- Left: Logo + Website Name -->
     <div class="flex items-center gap-2">
-      <!-- Replace with your own logo -->
       <img src="assets/logo.png" alt="Logo" class="h-8 w-8">
-      <span class="text-lg font-semibold text-gray-800">Emergency Service</span>
+      <span class="text-lg font-semibold">Emergency Service</span>
     </div>
 
     <!-- Right: Heart, Coin Count, Copy Count -->
     <div class="flex items-center gap-4">
-      
-      <!-- Heart Icon -->
       <button id="heartBtn" class="hover:scale-110 transition">
         <img src="assets/heart.png" alt="Heart" class="h-6 w-6">
       </button>
-
-      <!-- Coin Count -->
       <div class="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full font-medium">
         <img src="assets/coin.png" alt="Coin" class="h-5 w-5">
         <span id="coinCount">100</span>
       </div>
-
-      <!-- Copy Count -->
       <div class="flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full font-medium">
+        <img src="" alt="Copy" class="h-5 w-5">
         <span id="copyCount">0</span>
       </div>
-
     </div>
   </nav>
 
 
-  <!-- Hero Section -->
+  <!-- ================= HERO SECTION ================= -->
   <section class="h-screen bg-gradient-to-b from-green-700 via-green-500 to-green-300 flex flex-col items-center justify-between text-white px-4 py-10">
-    
-    <!-- Top: Logo -->
     <div class="mt-6">
-      <!-- Replace with your hero logo -->
-      <img src="assets/logo.png" alt="Hero Logo" class="h-24 w-24 mx-auto">
+      <img src="assets/logo-dark.png" alt="Hero Logo" class="h-24 w-24 mx-auto">
     </div>
-
-    <!-- Center: Title -->
     <div class="flex-grow flex items-center justify-center">
       <h1 class="text-4xl md:text-5xl font-bold text-center drop-shadow-lg">
         Emergency Service Directory
       </h1>
     </div>
-
-    <!-- Bottom: Slogan -->
     <div class="mb-10 text-center">
       <p class="text-lg md:text-xl font-medium italic">
-        Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh
+        Government Emergency Services at Your Fingertips
       </p>
     </div>
-
   </section>
 
 
-  <script>
-    // Default Coin Count
-    let coins = 100;
-    document.getElementById("coinCount").textContent = coins;
+  <!-- ================= MAIN SECTION ================= -->
+  <main class="px-6 py-12 bg-gray-50">
+    <div class="grid md:grid-cols-3 gap-8">
 
-    // Copy Count
+      <!-- ====== Card Section (2 cols) ====== -->
+      <div class="md:col-span-2 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Police -->
+        <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <img src="assets/police.png" alt="Police" class="h-10 w-10">
+            <span class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full">Police</span>
+          </div>
+          <h2 class="text-lg font-semibold">পুলিশ</h2>
+          <p class="text-sm text-gray-600">Police</p>
+          <p class="text-lg font-bold text-green-700 mt-2">999</p>
+          <div class="mt-auto flex justify-between gap-2 pt-4">
+            <button onclick="copyNumber('999')" class="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 text-sm">Copy</button>
+            <a href="tel:999" class="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg py-2 text-sm"> Call</a>
+          </div>
+        </div>
+
+        <!-- Ambulance -->
+        <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <img src="assets/ambulance.png" alt="Ambulance" class="h-10 w-10">
+            <span class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded-full">Medical</span>
+          </div>
+          <h2 class="text-lg font-semibold">অ্যাম্বুলেন্স</h2>
+          <p class="text-sm text-gray-600">Ambulance</p>
+          <p class="text-lg font-bold text-green-700 mt-2">108</p>
+          <div class="mt-auto flex justify-between gap-2 pt-4">
+            <button onclick="copyNumber('108')" class="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 text-sm"> Copy</button>
+            <a href="tel:108" class="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg py-2 text-sm"> Call</a>
+          </div>
+        </div>
+
+        <!-- Fire Service -->
+        <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <img src="assets/fire-service.png" alt="Fire" class="h-10 w-10">
+            <span class="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">Fire</span>
+          </div>
+          <h2 class="text-lg font-semibold">ফায়ার সার্ভিস</h2>
+          <p class="text-sm text-gray-600">Fire Service</p>
+          <p class="text-lg font-bold text-green-700 mt-2">102</p>
+          <div class="mt-auto flex justify-between gap-2 pt-4">
+            <button onclick="copyNumber('102')" class="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 text-sm"> Copy</button>
+            <a href="tel:102" class="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg py-2 text-sm"> Call</a>
+          </div>
+        </div>
+
+        <!-- Gas Emergency -->
+        <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <img src="assets/fire-service.png" alt="Gas" class="h-10 w-10">
+            <span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-1 rounded-full">Gas</span>
+          </div>
+          <h2 class="text-lg font-semibold">গ্যাস জরুরি</h2>
+          <p class="text-sm text-gray-600">Gas Emergency</p>
+          <p class="text-lg font-bold text-green-700 mt-2">16496</p>
+          <div class="mt-auto flex justify-between gap-2 pt-4">
+            <button onclick="copyNumber('16496')" class="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 text-sm"> Copy</button>
+            <a href="tel:16496" class="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg py-2 text-sm">Call</a>
+          </div>
+        </div>
+
+        <!-- Electricity -->
+        <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <img src="assets/logo-dark.png" alt="Electricity" class="h-10 w-10">
+            <span class="text-xs bg-purple-100 text-purple-600 px-2 py-1 rounded-full">Electricity</span>
+          </div>
+          <h2 class="text-lg font-semibold">বিদ্যুৎ</h2>
+          <p class="text-sm text-gray-600">Electricity</p>
+          <p class="text-lg font-bold text-green-700 mt-2">16116</p>
+          <div class="mt-auto flex justify-between gap-2 pt-4">
+            <button onclick="copyNumber('16116')" class="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 text-sm"> Copy</button>
+            <a href="tel:16116" class="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg py-2 text-sm"> Call</a>
+          </div>
+        </div>
+
+        <!-- Disaster Management -->
+        <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+          <div class="flex justify-between items-center mb-3">
+            <img src="assets/ambulance.png" alt="Disaster" class="h-10 w-10">
+            <span class="text-xs bg-teal-100 text-teal-600 px-2 py-1 rounded-full">Disaster</span>
+          </div>
+          <h2 class="text-lg font-semibold">দুর্যোগ</h2>
+          <p class="text-sm text-gray-600">Disaster Management</p>
+          <p class="text-lg font-bold text-green-700 mt-2">1090</p>
+          <div class="mt-auto flex justify-between gap-2 pt-4">
+            <button onclick="copyNumber('1090')" class="flex-1 bg-gray-100 hover:bg-gray-200 rounded-lg py-2 text-sm"> Copy</button>
+            <a href="tel:1090" class="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg py-2 text-sm"> Call</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ====== History Section ====== -->
+      <div class="bg-white rounded-2xl shadow-md p-4 flex flex-col">
+        <div class="flex justify-between items-center mb-4">
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-semibold">History</h3>
+          </div>
+          <button onclick="clearHistory()" class="text-sm text-red-500 hover:text-red-700">Clear History</button>
+        </div>
+        <ul id="historyList" class="space-y-2 text-sm text-gray-700">
+          <li class="text-gray-400 italic">No history yet...</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
     let copyCount = 0;
     const copyEl = document.getElementById("copyCount");
+    const historyList = document.getElementById("historyList");
 
-    // Example: increase copy count when clicking the heart
-    document.getElementById("heartBtn").addEventListener("click", () => {
+    function copyNumber(number) {
+      navigator.clipboard.writeText(number);
       copyCount++;
       copyEl.textContent = copyCount;
+
+      if (historyList.firstElementChild?.classList.contains("italic")) {
+        historyList.firstElementChild.remove();
+      }
+      const li = document.createElement("li");
+      li.textContent = "Copied number: " + number;
+      historyList.appendChild(li);
+    }
+
+    function clearHistory() {
+      historyList.innerHTML = '<li class="text-gray-400 italic">No history yet...</li>';
+      copyCount = 0;
+      copyEl.textContent = copyCount;
+    }
+
+    document.getElementById("heartBtn").addEventListener("click", () => {
+      alert(" You liked this service!");
     });
   </script>
 
